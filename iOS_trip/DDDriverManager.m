@@ -30,8 +30,8 @@
 - (void)searchDriversWithinMapRect:(MAMapRect)mapRect
 {
     //在mapRect区域里随机生成coordinate
-#define MAX_COUNT 50
-#define MIN_COUNT 5
+#define MAX_COUNT 30
+#define MIN_COUNT 10
     NSUInteger randCount = arc4random() % MAX_COUNT + MIN_COUNT;
     
     NSMutableArray * drivers = [NSMutableArray arrayWithCapacity:randCount];

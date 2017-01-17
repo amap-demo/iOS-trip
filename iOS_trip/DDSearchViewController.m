@@ -10,10 +10,10 @@
 #import "DDLocation.h"
 #import "DDSearchManager.h"
 
-@interface DDSearchViewController ()<UISearchBarDelegate, UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface DDSearchViewController ()<UISearchBarDelegate, UISearchResultsUpdating, UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, strong) UISearchBar *searchBar;
-@property (nonatomic, strong) UISearchDisplayController *displayController;
+@property (nonatomic, strong) UISearchController *searchController;
+@property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *locations;
 
 @end
@@ -39,18 +39,28 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
+    [self initTableView];
     [self initSearchBar];
-    [self initSearchDisplay];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [_searchBar becomeFirstResponder];
     if (self.text.length > 0)
     {
+        self.searchController.searchBar.placeholder = self.text;
         [self searchTipsWithKey:self.text];
     }
+    else
+    {
+        [self performSelector:@selector(showKeyboard) withObject:nil afterDelay:0.1];
+    }
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    self.searchController.active = NO;
 }
 
 - (void)didReceiveMemoryWarning
@@ -64,28 +74,38 @@
     NSLog(@"%s", __func__);
 }
 
+- (void)showKeyboard
+{
+    [self.searchController.searchBar becomeFirstResponder];
+}
+
 #pragma mark - Initialization
 
 - (void)initSearchBar
 {
-    self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 44)];
-    self.searchBar.barStyle     = UIBarStyleBlack;
-    self.searchBar.translucent  = YES;
-    self.searchBar.delegate     = self;
-    self.searchBar.placeholder = @"搜索";
-    self.searchBar.text = self.text;
-    self.searchBar.keyboardType = UIKeyboardTypeDefault;
+    self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
     
-    self.navigationItem.titleView = self.searchBar;
+    self.searchController.searchResultsUpdater = self;
+    self.searchController.dimsBackgroundDuringPresentation = NO;
+    self.searchController.hidesNavigationBarDuringPresentation = NO;
+    
+    self.searchController.searchBar.delegate = self;
+    self.searchController.searchBar.placeholder = @"请输入关键字";
+    [self.searchController.searchBar sizeToFit];
+    
+    self.navigationItem.titleView = self.searchController.searchBar;
 }
 
-- (void)initSearchDisplay
+- (void)initTableView
 {
-    self.displayController = [[UISearchDisplayController alloc] initWithSearchBar:self.searchBar contentsController:self];
-    self.displayController.delegate                = self;
-    self.displayController.searchResultsDataSource = self;
-    self.displayController.searchResultsDelegate   = self;
-    self.displayController.displaysSearchBarInNavigationBar = YES;
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
+    
+    self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    
+    [self.view addSubview:self.tableView];
 }
 
 #pragma mark - Helpers
@@ -127,27 +147,27 @@
                  [weakSelf.locations addObject:location];
              }];
             
-            [weakSelf.displayController.searchResultsTableView reloadData];
+            [weakSelf.tableView reloadData];
         }
     }];
 }
 
-#pragma mark - UISearchBarDelegate
+#pragma mark - UISearchResultsUpdating
 
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+- (void)didPresentSearchController:(UISearchController *)searchController
 {
-    self.text = searchBar.text;
-    [self searchTipsWithKey:self.text];
+    [searchController.searchBar becomeFirstResponder];
 }
 
-#pragma mark - UISearchDisplayDelegate
-
-- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController
 {
-    self.text = searchString;
-    [self searchTipsWithKey:self.text];
+    self.tableView.hidden = !searchController.isActive;
+    [self searchTipsWithKey:searchController.searchBar.text];
     
-    return YES;
+    if (searchController.isActive && searchController.searchBar.text.length > 0)
+    {
+        searchController.searchBar.placeholder = searchController.searchBar.text;
+    }
 }
 
 #pragma mark - UITableViewDataSource
@@ -178,7 +198,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [_searchBar resignFirstResponder];
+    self.searchController.active = NO;
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
     DDLocation *location = self.locations[indexPath.row];

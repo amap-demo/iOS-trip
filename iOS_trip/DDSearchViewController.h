@@ -23,7 +23,7 @@
  */
 @interface DDSearchViewController : UIViewController
 
-@property (nonatomic, assign) id<DDSearchViewControllerDelegate> delegate;
+@property (nonatomic, weak) id<DDSearchViewControllerDelegate> delegate;
 @property (nonatomic, copy) NSString *text;
 @property (nonatomic, copy) NSString *city;
 

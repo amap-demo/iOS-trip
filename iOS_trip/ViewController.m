@@ -9,15 +9,13 @@
 #import "ViewController.h"
 #import <MAMapKit/MAMapKit.h>
 #import <AMapSearchKit/AMapSearchAPI.h>
+#import "CustomMovingAnnotation.h"
 #import "DDLocation.h"
 #import "DDSearchViewController.h"
 #import "DDSearchManager.h"
-
 #import "DDDriverManager.h"
 #import "DDLocationView.h"
-
 #import "Toast+UIView.h"
-#import "MovingAnnotationView.h"
 
 typedef NS_ENUM(NSUInteger, DDState) {
     DDState_Init = 0,  //初始状态，显示选择终点
@@ -39,7 +37,7 @@ typedef NS_ENUM(NSUInteger, DDState) {
     
     DDDriverManager * _driverManager;
     NSArray * _drivers;
-    MAPointAnnotation * _selectedDriver;
+    CustomMovingAnnotation *_selectedDriver;
     
     UIButton *_buttonAction;
     UIButton *_buttonCancel;
@@ -125,8 +123,7 @@ typedef NS_ENUM(NSUInteger, DDState) {
         MAAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:userLocationStyleReuseIndetifier];
         if (annotationView == nil)
         {
-            annotationView = [[MAPinAnnotationView alloc] initWithAnnotation:annotation
-                                                             reuseIdentifier:userLocationStyleReuseIndetifier];
+            annotationView = [[MAAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:userLocationStyleReuseIndetifier];
         }
         UIImage *image = [UIImage imageNamed:@"icon_passenger"];
         annotationView.image = image;
@@ -140,10 +137,10 @@ typedef NS_ENUM(NSUInteger, DDState) {
     {
         static NSString *pointReuseIndetifier = @"driverReuseIndetifier";
         
-        MovingAnnotationView *annotationView = (MovingAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:pointReuseIndetifier];
+        MAAnnotationView *annotationView = (MAAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:pointReuseIndetifier];
         if (annotationView == nil)
         {
-            annotationView = [[MovingAnnotationView alloc] initWithAnnotation:annotation
+            annotationView = [[MAAnnotationView alloc] initWithAnnotation:annotation
                                                               reuseIdentifier:pointReuseIndetifier];
         }
         
@@ -165,7 +162,6 @@ typedef NS_ENUM(NSUInteger, DDState) {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.title = kAppName;
-    self.edgesForExtendedLayout = UIRectEdgeNone;
     
     _needsFirstLocating = YES;
     _isLocating = NO;
@@ -173,6 +169,7 @@ typedef NS_ENUM(NSUInteger, DDState) {
     
     _mapView = [[MAMapView alloc] initWithFrame:self.view.bounds];
     _mapView.showsCompass = NO;
+    _mapView.showsIndoorMap = NO;
     _mapView.rotateEnabled = NO;
     _mapView.showsScale = NO;
 
@@ -219,7 +216,7 @@ typedef NS_ENUM(NSUInteger, DDState) {
 
     
     _currentLocation = [[DDLocation alloc] init];
-    _locationView = [[DDLocationView alloc] initWithFrame:CGRectMake(kLocationViewMargin, kLocationViewMargin, CGRectGetWidth(self.view.bounds) - kLocationViewMargin * 2, 44)];
+    _locationView = [[DDLocationView alloc] initWithFrame:CGRectMake(kLocationViewMargin, 66 + kLocationViewMargin, CGRectGetWidth(self.view.bounds) - kLocationViewMargin * 2, 44)];
     _locationView.delegate = self;
     _locationView.startLocation = _currentLocation;
     
@@ -311,8 +308,8 @@ typedef NS_ENUM(NSUInteger, DDState) {
     {
         _isLocating = YES;
         
-        [self resetMapToCenter:_mapView.userLocation.location.coordinate];
         [self searchReGeocodeWithCoordinate:_mapView.userLocation.location.coordinate];
+        [self resetMapToCenter:_mapView.userLocation.location.coordinate];
         [self updatingDrivers];
     }
 }
@@ -341,7 +338,7 @@ typedef NS_ENUM(NSUInteger, DDState) {
 #define latitudinalRangeMeters 1000.0
 #define longitudinalRangeMeters 1000.0
     
-    MAMapRect rect = MAMapRectForCoordinateRegion(MACoordinateRegionMakeWithDistance(_mapView.centerCoordinate, latitudinalRangeMeters, longitudinalRangeMeters));
+    MAMapRect rect = MAMapRectForCoordinateRegion(MACoordinateRegionMakeWithDistance(_mapView.userLocation.coordinate, latitudinalRangeMeters, longitudinalRangeMeters));
     if(rect.size.width > 0 && rect.size.height > 0) {
         [_driverManager searchDriversWithinMapRect:rect];
     }
@@ -371,7 +368,7 @@ typedef NS_ENUM(NSUInteger, DDState) {
     [_mapView removeAnnotations:_drivers];
     _drivers = nil;
     
-    _selectedDriver = [[MAPointAnnotation alloc] init];
+    _selectedDriver = [[CustomMovingAnnotation alloc] init];
     _selectedDriver.coordinate = driver.coordinate;
     _selectedDriver.title = driver.idInfo;
     [_mapView addAnnotation:_selectedDriver];
@@ -386,17 +383,18 @@ typedef NS_ENUM(NSUInteger, DDState) {
 {
     if ([locations count] > 0) {
 
-        [_mapView selectAnnotation:_selectedDriver animated:NO];
-        _selectedDriver.coordinate = ((CLLocation*) [locations lastObject]).coordinate;
+//        [_mapView selectAnnotation:_selectedDriver animated:NO];
+//        _selectedDriver.coordinate = ((CLLocation*) [locations lastObject]).coordinate;
         
+        NSLog(@"locations :%@", locations);
         CLLocationCoordinate2D * locs = (CLLocationCoordinate2D *)malloc(sizeof(CLLocationCoordinate2D) * [locations count]);
         [locations enumerateObjectsUsingBlock:^(CLLocation * obj, NSUInteger idx, BOOL *stop) {
             locs[idx] = obj.coordinate;
         }];
         
-        MovingAnnotationView * driverView = (MovingAnnotationView *)[_mapView viewForAnnotation:_selectedDriver];
-        
-        [driverView addTrackingAnimationForCoordinates:locs count:[locations count] duration:2.0];
+        [_selectedDriver addMoveAnimationWithKeyCoordinates:locs count:[locations count] withDuration:5.0 withName:nil completeCallback:^(BOOL isFinished) {
+            
+        }];
         
         free(locs);
     }
@@ -516,7 +514,7 @@ typedef NS_ENUM(NSUInteger, DDState) {
     _drivers = nil;
     [_mapView removeAnnotation:_selectedDriver];
     
-    _needsFirstLocating = YES;
+//    _needsFirstLocating = YES;
     _destinationLocation = nil;
     _locationView.endLocation = nil;
     _locationView.info = nil;
@@ -524,11 +522,11 @@ typedef NS_ENUM(NSUInteger, DDState) {
 
 - (void)resetMapToCenter:(CLLocationCoordinate2D)coordinate
 {
-    _mapView.centerCoordinate = coordinate;
-    _mapView.zoomLevel = 15.1;
-    
     // 使得userLocationView在最前。
-    [_mapView selectAnnotation:_mapView.userLocation animated:YES];
+    [_mapView selectAnnotation:_mapView.userLocation animated:NO];
+    
+    _mapView.centerCoordinate = coordinate;
+    _mapView.zoomLevel = 16.1;
 }
 
 #pragma mark - DDLocationViewDelegate

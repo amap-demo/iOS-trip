@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		17179FF9F18B53FB55963039 /* libPods-iOS_trip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87CC1F675118DA67F3BBB5EC /* libPods-iOS_trip.a */; };
+		6AF14B1C1E2CBDBB006075DF /* CustomMovingAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF14B1B1E2CBDBB006075DF /* CustomMovingAnnotation.m */; };
+		6AF14B241E2DD093006075DF /* iOS_tripUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF14B231E2DD093006075DF /* iOS_tripUITests.m */; };
 		B6152C3E1DBDDF6E00254FC8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B6152C111DBDDF6E00254FC8 /* AppDelegate.m */; };
 		B6152C3F1DBDDF6E00254FC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6152C121DBDDF6E00254FC8 /* Assets.xcassets */; };
 		B6152C401DBDDF6E00254FC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6152C131DBDDF6E00254FC8 /* Main.storyboard */; };
@@ -23,8 +25,6 @@
 		B6152C4B1DBDDF6E00254FC8 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6152C281DBDDF6E00254FC8 /* Launch Screen.xib */; };
 		B6152C4C1DBDDF6E00254FC8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B6152C291DBDDF6E00254FC8 /* main.m */; };
 		B6152C4D1DBDDF6E00254FC8 /* MANaviRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = B6152C2B1DBDDF6E00254FC8 /* MANaviRoute.m */; };
-		B6152C4E1DBDDF6E00254FC8 /* CACoordLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B6152C2E1DBDDF6E00254FC8 /* CACoordLayer.m */; };
-		B6152C4F1DBDDF6E00254FC8 /* MovingAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6152C301DBDDF6E00254FC8 /* MovingAnnotationView.m */; };
 		B6152C501DBDDF6E00254FC8 /* endPoint.png in Resources */ = {isa = PBXBuildFile; fileRef = B6152C321DBDDF6E00254FC8 /* endPoint.png */; };
 		B6152C511DBDDF6E00254FC8 /* endPoint@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6152C331DBDDF6E00254FC8 /* endPoint@2x.png */; };
 		B6152C521DBDDF6E00254FC8 /* icon_next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6152C341DBDDF6E00254FC8 /* icon_next@2x.png */; };
@@ -43,9 +43,24 @@
 		B6152C6D1DBDDFAE00254FC8 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B6152C6C1DBDDFAE00254FC8 /* libstdc++.tbd */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		6AF14B261E2DD093006075DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B6152BED1DBDDE3B00254FC8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B6152BF41DBDDE3B00254FC8;
+			remoteInfo = iOS_trip;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		0A6058835F216D1E32D77308 /* Pods-iOS_trip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_trip.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS_trip/Pods-iOS_trip.debug.xcconfig"; sourceTree = "<group>"; };
 		2B31CB361277ADE939E0D89E /* Pods-iOS_trip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_trip.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS_trip/Pods-iOS_trip.release.xcconfig"; sourceTree = "<group>"; };
+		6AF14B1A1E2CBDBB006075DF /* CustomMovingAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomMovingAnnotation.h; sourceTree = "<group>"; };
+		6AF14B1B1E2CBDBB006075DF /* CustomMovingAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomMovingAnnotation.m; sourceTree = "<group>"; };
+		6AF14B211E2DD093006075DF /* iOS_tripUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS_tripUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AF14B231E2DD093006075DF /* iOS_tripUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOS_tripUITests.m; sourceTree = "<group>"; };
+		6AF14B251E2DD093006075DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87CC1F675118DA67F3BBB5EC /* libPods-iOS_trip.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS_trip.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6152BF51DBDDE3B00254FC8 /* iOS_trip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_trip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6152C101DBDDF6E00254FC8 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -75,10 +90,6 @@
 		B6152C291DBDDF6E00254FC8 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B6152C2A1DBDDF6E00254FC8 /* MANaviRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MANaviRoute.h; sourceTree = "<group>"; };
 		B6152C2B1DBDDF6E00254FC8 /* MANaviRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MANaviRoute.m; sourceTree = "<group>"; };
-		B6152C2D1DBDDF6E00254FC8 /* CACoordLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CACoordLayer.h; sourceTree = "<group>"; };
-		B6152C2E1DBDDF6E00254FC8 /* CACoordLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CACoordLayer.m; sourceTree = "<group>"; };
-		B6152C2F1DBDDF6E00254FC8 /* MovingAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovingAnnotationView.h; sourceTree = "<group>"; };
-		B6152C301DBDDF6E00254FC8 /* MovingAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovingAnnotationView.m; sourceTree = "<group>"; };
 		B6152C321DBDDF6E00254FC8 /* endPoint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = endPoint.png; sourceTree = "<group>"; };
 		B6152C331DBDDF6E00254FC8 /* endPoint@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "endPoint@2x.png"; sourceTree = "<group>"; };
 		B6152C341DBDDF6E00254FC8 /* icon_next@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_next@2x.png"; sourceTree = "<group>"; };
@@ -100,6 +111,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6AF14B1E1E2DD093006075DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B6152BF21DBDDE3B00254FC8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -117,10 +135,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6AF14B221E2DD093006075DF /* iOS_tripUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6AF14B231E2DD093006075DF /* iOS_tripUITests.m */,
+				6AF14B251E2DD093006075DF /* Info.plist */,
+			);
+			path = iOS_tripUITests;
+			sourceTree = "<group>";
+		};
 		B6152BEC1DBDDE3B00254FC8 = {
 			isa = PBXGroup;
 			children = (
 				B6152C0F1DBDDF6E00254FC8 /* iOS_trip */,
+				6AF14B221E2DD093006075DF /* iOS_tripUITests */,
 				B6152BF61DBDDE3B00254FC8 /* Products */,
 				B6152C611DBDDF8C00254FC8 /* Frameworks */,
 				E2EE1C84B52B7268D5DBDE82 /* Pods */,
@@ -131,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				B6152BF51DBDDE3B00254FC8 /* iOS_trip.app */,
+				6AF14B211E2DD093006075DF /* iOS_tripUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -138,6 +167,7 @@
 		B6152C0F1DBDDF6E00254FC8 /* iOS_trip */ = {
 			isa = PBXGroup;
 			children = (
+				B6152C311DBDDF6E00254FC8 /* Resources */,
 				B6152C101DBDDF6E00254FC8 /* AppDelegate.h */,
 				B6152C111DBDDF6E00254FC8 /* AppDelegate.m */,
 				B6152C121DBDDF6E00254FC8 /* Assets.xcassets */,
@@ -163,27 +193,16 @@
 				B6152C271DBDDF6E00254FC8 /* Info.plist */,
 				B6152C281DBDDF6E00254FC8 /* Launch Screen.xib */,
 				B6152C291DBDDF6E00254FC8 /* main.m */,
+				6AF14B1A1E2CBDBB006075DF /* CustomMovingAnnotation.h */,
+				6AF14B1B1E2CBDBB006075DF /* CustomMovingAnnotation.m */,
 				B6152C2A1DBDDF6E00254FC8 /* MANaviRoute.h */,
 				B6152C2B1DBDDF6E00254FC8 /* MANaviRoute.m */,
-				B6152C2C1DBDDF6E00254FC8 /* MovingAnnotation */,
-				B6152C311DBDDF6E00254FC8 /* Resources */,
 				B6152C3A1DBDDF6E00254FC8 /* Toast+UIView.h */,
 				B6152C3B1DBDDF6E00254FC8 /* Toast+UIView.m */,
 				B6152C3C1DBDDF6E00254FC8 /* ViewController.h */,
 				B6152C3D1DBDDF6E00254FC8 /* ViewController.m */,
 			);
 			path = iOS_trip;
-			sourceTree = "<group>";
-		};
-		B6152C2C1DBDDF6E00254FC8 /* MovingAnnotation */ = {
-			isa = PBXGroup;
-			children = (
-				B6152C2D1DBDDF6E00254FC8 /* CACoordLayer.h */,
-				B6152C2E1DBDDF6E00254FC8 /* CACoordLayer.m */,
-				B6152C2F1DBDDF6E00254FC8 /* MovingAnnotationView.h */,
-				B6152C301DBDDF6E00254FC8 /* MovingAnnotationView.m */,
-			);
-			path = MovingAnnotation;
 			sourceTree = "<group>";
 		};
 		B6152C311DBDDF6E00254FC8 /* Resources */ = {
@@ -227,6 +246,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		6AF14B201E2DD093006075DF /* iOS_tripUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6AF14B2A1E2DD093006075DF /* Build configuration list for PBXNativeTarget "iOS_tripUITests" */;
+			buildPhases = (
+				6AF14B1D1E2DD093006075DF /* Sources */,
+				6AF14B1E1E2DD093006075DF /* Frameworks */,
+				6AF14B1F1E2DD093006075DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6AF14B271E2DD093006075DF /* PBXTargetDependency */,
+			);
+			name = iOS_tripUITests;
+			productName = iOS_tripUITests;
+			productReference = 6AF14B211E2DD093006075DF /* iOS_tripUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		B6152BF41DBDDE3B00254FC8 /* iOS_trip */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B6152C0C1DBDDE3B00254FC8 /* Build configuration list for PBXNativeTarget "iOS_trip" */;
@@ -253,9 +290,15 @@
 		B6152BED1DBDDE3B00254FC8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = yours;
 				TargetAttributes = {
+					6AF14B201E2DD093006075DF = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = YMJ372W38W;
+						ProvisioningStyle = Manual;
+						TestTargetID = B6152BF41DBDDE3B00254FC8;
+					};
 					B6152BF41DBDDE3B00254FC8 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = YMJ372W38W;
@@ -277,11 +320,19 @@
 			projectRoot = "";
 			targets = (
 				B6152BF41DBDDE3B00254FC8 /* iOS_trip */,
+				6AF14B201E2DD093006075DF /* iOS_tripUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6AF14B1F1E2DD093006075DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B6152BF31DBDDE3B00254FC8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -351,6 +402,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6AF14B1D1E2DD093006075DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AF14B241E2DD093006075DF /* iOS_tripUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B6152BF11DBDDE3B00254FC8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -358,14 +417,13 @@
 				B6152C451DBDDF6E00254FC8 /* DDLocationControl.m in Sources */,
 				B6152C421DBDDF6E00254FC8 /* DDDriver.m in Sources */,
 				B6152C441DBDDF6E00254FC8 /* DDLocation.m in Sources */,
-				B6152C4F1DBDDF6E00254FC8 /* MovingAnnotationView.m in Sources */,
 				B6152C4D1DBDDF6E00254FC8 /* MANaviRoute.m in Sources */,
 				B6152C491DBDDF6E00254FC8 /* DDTaxiCallRequest.m in Sources */,
 				B6152C581DBDDF6E00254FC8 /* Toast+UIView.m in Sources */,
 				B6152C481DBDDF6E00254FC8 /* DDSearchViewController.m in Sources */,
 				B6152C461DBDDF6E00254FC8 /* DDLocationView.m in Sources */,
-				B6152C4E1DBDDF6E00254FC8 /* CACoordLayer.m in Sources */,
 				B6152C591DBDDF6E00254FC8 /* ViewController.m in Sources */,
+				6AF14B1C1E2CBDBB006075DF /* CustomMovingAnnotation.m in Sources */,
 				B6152C3E1DBDDF6E00254FC8 /* AppDelegate.m in Sources */,
 				B6152C471DBDDF6E00254FC8 /* DDSearchManager.m in Sources */,
 				B6152C411DBDDF6E00254FC8 /* CommonUtility.m in Sources */,
@@ -375,6 +433,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6AF14B271E2DD093006075DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B6152BF41DBDDE3B00254FC8 /* iOS_trip */;
+			targetProxy = 6AF14B261E2DD093006075DF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B6152C131DBDDF6E00254FC8 /* Main.storyboard */ = {
@@ -388,6 +454,36 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		6AF14B281E2DD093006075DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = YMJ372W38W;
+				INFOPLIST_FILE = iOS_tripUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.autonavi.iOS-tripUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "9b821a78-8ad6-4cf7-b6b0-31b43df04bbe";
+				PROVISIONING_PROFILE_SPECIFIER = openPlatform_development;
+				TEST_TARGET_NAME = iOS_trip;
+			};
+			name = Debug;
+		};
+		6AF14B291E2DD093006075DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = YMJ372W38W;
+				INFOPLIST_FILE = iOS_tripUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.autonavi.iOS-tripUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "9b821a78-8ad6-4cf7-b6b0-31b43df04bbe";
+				PROVISIONING_PROFILE_SPECIFIER = openPlatform_development;
+				TEST_TARGET_NAME = iOS_trip;
+			};
+			name = Release;
+		};
 		B6152C0A1DBDDE3B00254FC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -406,6 +502,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -454,6 +551,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -520,6 +618,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6AF14B2A1E2DD093006075DF /* Build configuration list for PBXNativeTarget "iOS_tripUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6AF14B281E2DD093006075DF /* Debug */,
+				6AF14B291E2DD093006075DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		B6152BF01DBDDE3B00254FC8 /* Build configuration list for PBXProject "iOS_trip" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
