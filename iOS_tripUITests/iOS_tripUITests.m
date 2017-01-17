@@ -35,8 +35,6 @@
 - (void)testExample {
     // Use recording to get started writing UI tests.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
-    sleep(2);
-    
     XCUIApplication *app = [[XCUIApplication alloc] init];;
     
     [app.images[@"icon_passenger"] tap];
@@ -45,6 +43,8 @@
     
     XCTAssert(annos.count > 10, @"annos count must greater than 10");
     
+    
+    sleep(1);
     [app.buttons[@"选择终点"] tap];
     
     sleep(1);
