@@ -382,11 +382,7 @@ typedef NS_ENUM(NSUInteger, DDState) {
 - (void)onUpdatingLocations:(NSArray *)locations forDriver:(DDDriver *)driver
 {
     if ([locations count] > 0) {
-
-//        [_mapView selectAnnotation:_selectedDriver animated:NO];
-//        _selectedDriver.coordinate = ((CLLocation*) [locations lastObject]).coordinate;
         
-        NSLog(@"locations :%@", locations);
         CLLocationCoordinate2D * locs = (CLLocationCoordinate2D *)malloc(sizeof(CLLocationCoordinate2D) * [locations count]);
         [locations enumerateObjectsUsingBlock:^(CLLocation * obj, NSUInteger idx, BOOL *stop) {
             locs[idx] = obj.coordinate;

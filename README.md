@@ -16,4 +16,42 @@ iOS-trip
 | DDDriverManager | - (void)searchDriversWithinMapRect:(MAMapRect)mapRect; | 模拟获取司机数据 | n/a |
 | DDDriverManager | - (BOOL)callTaxiWithRequest:(DDTaxiCallRequest *)request; | 模拟发起用车请求 | n/a |
 | DDSearchManager | - (void)searchForRequest:(id)request completionBlock:(DDSearchCompletionBlock)block; | 模拟搜索目的地 | n/a |
-| MovingAnnotationView | - (void)addTrackingAnimationForCoordinates:(CLLocationCoordinate2D *)coordinates count:(NSUInteger)count duration:(CFTimeInterval)duration; | 控制车辆移动 | n/a |
+| CustomMovingAnnotation | - (void)addMoveAnimationWithKeyCoordinates:count:duration:name:completeCallback | 继承自MAAnimatedAnnotation，为了实现汽车图标的平滑移动 | 4.5.0 |
+
+
+### 核心难点
+`Objective-C`
+```
+/**
+*  司机相关管理类。获取司机数据、发送用车请求等。
+*/
+@interface DDDriverManager : NSObject
+
+@property (nonatomic, weak) id<DDDriverManagerDelegate> delegate;
+
+//根据mapRect取司机数据
+- (void)searchDriversWithinMapRect:(MAMapRect)mapRect;
+
+//发送用车请求：起点终点
+- (BOOL)callTaxiWithRequest:(DDTaxiCallRequest *)request;
+
+@end
+
+///有位置更新时，更新汽车图标位置，使之平滑移动。
+- (void)onUpdatingLocations:(NSArray *)locations forDriver:(DDDriver *)driver
+{
+    if ([locations count] > 0) {
+
+        CLLocationCoordinate2D * locs = (CLLocationCoordinate2D *)malloc(sizeof(CLLocationCoordinate2D) * [locations count]);
+        [locations enumerateObjectsUsingBlock:^(CLLocation * obj, NSUInteger idx, BOOL *stop) {
+            locs[idx] = obj.coordinate;
+        }];
+
+        [_selectedDriver addMoveAnimationWithKeyCoordinates:locs count:[locations count] withDuration:5.0 withName:nil completeCallback:^(BOOL isFinished) {
+
+        }];
+
+        free(locs);
+    }
+}
+```
