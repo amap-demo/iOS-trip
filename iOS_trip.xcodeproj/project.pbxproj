@@ -8,8 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		17179FF9F18B53FB55963039 /* libPods-iOS_trip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87CC1F675118DA67F3BBB5EC /* libPods-iOS_trip.a */; };
+		3AAD7CDC1E349ED000475C37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAD7CDB1E349ED000475C37 /* AppDelegate.swift */; };
+		3AAD7CDE1E349ED000475C37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAD7CDD1E349ED000475C37 /* ViewController.swift */; };
+		3AAD7CE11E349ED000475C37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AAD7CDF1E349ED000475C37 /* Main.storyboard */; };
+		3AAD7CE31E349ED000475C37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AAD7CE21E349ED000475C37 /* Assets.xcassets */; };
+		3AAD7CE61E349ED000475C37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AAD7CE41E349ED000475C37 /* LaunchScreen.storyboard */; };
+		3AAD7CEC1E34A1EA00475C37 /* CommonUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = B6152C161DBDDF6E00254FC8 /* CommonUtility.m */; };
+		3AAD7CED1E34A1EA00475C37 /* DDDriver.m in Sources */ = {isa = PBXBuildFile; fileRef = B6152C181DBDDF6E00254FC8 /* DDDriver.m */; };
+		3AAD7CEE1E34A1EA00475C37 /* DDLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = B6152C1C1DBDDF6E00254FC8 /* DDLocation.m */; };
+		3AAD7CEF1E34A1EA00475C37 /* DDLocationControl.m in Sources */ = {isa = PBXBuildFile; fileRef = B6152C1E1DBDDF6E00254FC8 /* DDLocationControl.m */; };
+		3AAD7CF01E34A1EA00475C37 /* DDLocationView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6152C201DBDDF6E00254FC8 /* DDLocationView.m */; };
+		3AAD7CF11E34A1EA00475C37 /* DDTaxiCallRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B6152C261DBDDF6E00254FC8 /* DDTaxiCallRequest.m */; };
+		3AAD7CF21E34A1EA00475C37 /* CustomMovingAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF14B1B1E2CBDBB006075DF /* CustomMovingAnnotation.m */; };
+		3AAD7CF31E34A1EA00475C37 /* MANaviRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = B6152C2B1DBDDF6E00254FC8 /* MANaviRoute.m */; };
+		3AAD7CF41E34A1EA00475C37 /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6152C3B1DBDDF6E00254FC8 /* Toast+UIView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3AAD7CF61E35ABA400475C37 /* DDDriverManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAD7CF51E35ABA400475C37 /* DDDriverManager.swift */; };
+		3AAD7CF81E35ABBF00475C37 /* DDSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAD7CF71E35ABBF00475C37 /* DDSearchManager.swift */; };
+		3AAD7CFA1E35ABCE00475C37 /* DDSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAD7CF91E35ABCE00475C37 /* DDSearchViewController.swift */; };
+		3AAD7D071E4C1C9F00475C37 /* endPoint.png in Resources */ = {isa = PBXBuildFile; fileRef = B6152C321DBDDF6E00254FC8 /* endPoint.png */; };
+		3AAD7D081E4C1C9F00475C37 /* endPoint@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6152C331DBDDF6E00254FC8 /* endPoint@2x.png */; };
+		3AAD7D091E4C1C9F00475C37 /* icon_next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6152C341DBDDF6E00254FC8 /* icon_next@2x.png */; };
+		3AAD7D0A1E4C1C9F00475C37 /* icon_passenger@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6152C351DBDDF6E00254FC8 /* icon_passenger@2x.png */; };
+		3AAD7D0B1E4C1C9F00475C37 /* icon_taxi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6152C361DBDDF6E00254FC8 /* icon_taxi@2x.png */; };
+		3AAD7D0C1E4C1C9F00475C37 /* location@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6152C371DBDDF6E00254FC8 /* location@2x.png */; };
+		3AAD7D0D1E4C1C9F00475C37 /* startPoint.png in Resources */ = {isa = PBXBuildFile; fileRef = B6152C381DBDDF6E00254FC8 /* startPoint.png */; };
+		3AAD7D0E1E4C1C9F00475C37 /* startPoint@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6152C391DBDDF6E00254FC8 /* startPoint@2x.png */; };
 		6AF14B1C1E2CBDBB006075DF /* CustomMovingAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF14B1B1E2CBDBB006075DF /* CustomMovingAnnotation.m */; };
 		6AF14B241E2DD093006075DF /* iOS_tripUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF14B231E2DD093006075DF /* iOS_tripUITests.m */; };
+		793696FC1B68A747D2AD4EED /* libPods-iOS_trip-swift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8A5F8D038DC4D1C8F9BD905 /* libPods-iOS_trip-swift.a */; };
 		B6152C3E1DBDDF6E00254FC8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B6152C111DBDDF6E00254FC8 /* AppDelegate.m */; };
 		B6152C3F1DBDDF6E00254FC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6152C121DBDDF6E00254FC8 /* Assets.xcassets */; };
 		B6152C401DBDDF6E00254FC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6152C131DBDDF6E00254FC8 /* Main.storyboard */; };
@@ -56,6 +82,19 @@
 /* Begin PBXFileReference section */
 		0A6058835F216D1E32D77308 /* Pods-iOS_trip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_trip.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS_trip/Pods-iOS_trip.debug.xcconfig"; sourceTree = "<group>"; };
 		2B31CB361277ADE939E0D89E /* Pods-iOS_trip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_trip.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS_trip/Pods-iOS_trip.release.xcconfig"; sourceTree = "<group>"; };
+		2E7688BD3A40E5E46CF42043 /* Pods-iOS_trip-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_trip-swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS_trip-swift/Pods-iOS_trip-swift.release.xcconfig"; sourceTree = "<group>"; };
+		3AAD7CD91E349ED000475C37 /* iOS_trip-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS_trip-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AAD7CDB1E349ED000475C37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3AAD7CDD1E349ED000475C37 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3AAD7CE01E349ED000475C37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3AAD7CE21E349ED000475C37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3AAD7CE51E349ED000475C37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3AAD7CE71E349ED000475C37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AAD7CEB1E349FEA00475C37 /* Swift-Bridge-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Swift-Bridge-Header.h"; sourceTree = "<group>"; };
+		3AAD7CF51E35ABA400475C37 /* DDDriverManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DDDriverManager.swift; sourceTree = "<group>"; };
+		3AAD7CF71E35ABBF00475C37 /* DDSearchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DDSearchManager.swift; sourceTree = "<group>"; };
+		3AAD7CF91E35ABCE00475C37 /* DDSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DDSearchViewController.swift; sourceTree = "<group>"; };
+		666514A177394BA605A9F484 /* Pods-iOS_trip-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_trip-swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS_trip-swift/Pods-iOS_trip-swift.debug.xcconfig"; sourceTree = "<group>"; };
 		6AF14B1A1E2CBDBB006075DF /* CustomMovingAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomMovingAnnotation.h; sourceTree = "<group>"; };
 		6AF14B1B1E2CBDBB006075DF /* CustomMovingAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomMovingAnnotation.m; sourceTree = "<group>"; };
 		6AF14B211E2DD093006075DF /* iOS_tripUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS_tripUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,9 +147,18 @@
 		B6152C681DBDDF9C00254FC8 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		B6152C6A1DBDDFA400254FC8 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		B6152C6C1DBDDFAE00254FC8 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		F8A5F8D038DC4D1C8F9BD905 /* libPods-iOS_trip-swift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS_trip-swift.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3AAD7CD61E349ED000475C37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				793696FC1B68A747D2AD4EED /* libPods-iOS_trip-swift.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6AF14B1E1E2DD093006075DF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -135,6 +183,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3AAD7CDA1E349ED000475C37 /* iOS_trip-swift */ = {
+			isa = PBXGroup;
+			children = (
+				3AAD7CEB1E349FEA00475C37 /* Swift-Bridge-Header.h */,
+				3AAD7CDB1E349ED000475C37 /* AppDelegate.swift */,
+				3AAD7CF51E35ABA400475C37 /* DDDriverManager.swift */,
+				3AAD7CF71E35ABBF00475C37 /* DDSearchManager.swift */,
+				3AAD7CF91E35ABCE00475C37 /* DDSearchViewController.swift */,
+				3AAD7CDD1E349ED000475C37 /* ViewController.swift */,
+				3AAD7CDF1E349ED000475C37 /* Main.storyboard */,
+				3AAD7CE21E349ED000475C37 /* Assets.xcassets */,
+				3AAD7CE41E349ED000475C37 /* LaunchScreen.storyboard */,
+				3AAD7CE71E349ED000475C37 /* Info.plist */,
+			);
+			path = "iOS_trip-swift";
+			sourceTree = "<group>";
+		};
 		6AF14B221E2DD093006075DF /* iOS_tripUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +214,7 @@
 			children = (
 				B6152C0F1DBDDF6E00254FC8 /* iOS_trip */,
 				6AF14B221E2DD093006075DF /* iOS_tripUITests */,
+				3AAD7CDA1E349ED000475C37 /* iOS_trip-swift */,
 				B6152BF61DBDDE3B00254FC8 /* Products */,
 				B6152C611DBDDF8C00254FC8 /* Frameworks */,
 				E2EE1C84B52B7268D5DBDE82 /* Pods */,
@@ -160,6 +226,7 @@
 			children = (
 				B6152BF51DBDDE3B00254FC8 /* iOS_trip.app */,
 				6AF14B211E2DD093006075DF /* iOS_tripUITests.xctest */,
+				3AAD7CD91E349ED000475C37 /* iOS_trip-swift.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -230,6 +297,7 @@
 				B6152C641DBDDF9100254FC8 /* CoreTelephony.framework */,
 				B6152C621DBDDF8C00254FC8 /* SystemConfiguration.framework */,
 				87CC1F675118DA67F3BBB5EC /* libPods-iOS_trip.a */,
+				F8A5F8D038DC4D1C8F9BD905 /* libPods-iOS_trip-swift.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -239,6 +307,8 @@
 			children = (
 				0A6058835F216D1E32D77308 /* Pods-iOS_trip.debug.xcconfig */,
 				2B31CB361277ADE939E0D89E /* Pods-iOS_trip.release.xcconfig */,
+				666514A177394BA605A9F484 /* Pods-iOS_trip-swift.debug.xcconfig */,
+				2E7688BD3A40E5E46CF42043 /* Pods-iOS_trip-swift.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -246,6 +316,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3AAD7CD81E349ED000475C37 /* iOS_trip-swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3AAD7CEA1E349ED000475C37 /* Build configuration list for PBXNativeTarget "iOS_trip-swift" */;
+			buildPhases = (
+				37B2C25062FD0E886D54125C /* [CP] Check Pods Manifest.lock */,
+				3AAD7CD51E349ED000475C37 /* Sources */,
+				3AAD7CD61E349ED000475C37 /* Frameworks */,
+				3AAD7CD71E349ED000475C37 /* Resources */,
+				95B2AD8C1BFE7987F8E33A38 /* [CP] Embed Pods Frameworks */,
+				5C36B79DC6E2ED7E3A0F9C6C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "iOS_trip-swift";
+			productName = "iOS_trip-swift";
+			productReference = 3AAD7CD91E349ED000475C37 /* iOS_trip-swift.app */;
+			productType = "com.apple.product-type.application";
+		};
 		6AF14B201E2DD093006075DF /* iOS_tripUITests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6AF14B2A1E2DD093006075DF /* Build configuration list for PBXNativeTarget "iOS_tripUITests" */;
@@ -290,9 +380,15 @@
 		B6152BED1DBDDE3B00254FC8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0810;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = yours;
 				TargetAttributes = {
+					3AAD7CD81E349ED000475C37 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = YMJ372W38W;
+						ProvisioningStyle = Manual;
+					};
 					6AF14B201E2DD093006075DF = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = YMJ372W38W;
@@ -320,12 +416,31 @@
 			projectRoot = "";
 			targets = (
 				B6152BF41DBDDE3B00254FC8 /* iOS_trip */,
+				3AAD7CD81E349ED000475C37 /* iOS_trip-swift */,
 				6AF14B201E2DD093006075DF /* iOS_tripUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3AAD7CD71E349ED000475C37 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AAD7D071E4C1C9F00475C37 /* endPoint.png in Resources */,
+				3AAD7D081E4C1C9F00475C37 /* endPoint@2x.png in Resources */,
+				3AAD7D091E4C1C9F00475C37 /* icon_next@2x.png in Resources */,
+				3AAD7D0A1E4C1C9F00475C37 /* icon_passenger@2x.png in Resources */,
+				3AAD7D0B1E4C1C9F00475C37 /* icon_taxi@2x.png in Resources */,
+				3AAD7D0C1E4C1C9F00475C37 /* location@2x.png in Resources */,
+				3AAD7D0D1E4C1C9F00475C37 /* startPoint.png in Resources */,
+				3AAD7D0E1E4C1C9F00475C37 /* startPoint@2x.png in Resources */,
+				3AAD7CE61E349ED000475C37 /* LaunchScreen.storyboard in Resources */,
+				3AAD7CE31E349ED000475C37 /* Assets.xcassets in Resources */,
+				3AAD7CE11E349ED000475C37 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6AF14B1F1E2DD093006075DF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -354,6 +469,51 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		37B2C25062FD0E886D54125C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5C36B79DC6E2ED7E3A0F9C6C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOS_trip-swift/Pods-iOS_trip-swift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		95B2AD8C1BFE7987F8E33A38 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOS_trip-swift/Pods-iOS_trip-swift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		BEAEEC4D92849003896FC620 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -402,6 +562,27 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3AAD7CD51E349ED000475C37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AAD7CEC1E34A1EA00475C37 /* CommonUtility.m in Sources */,
+				3AAD7CED1E34A1EA00475C37 /* DDDriver.m in Sources */,
+				3AAD7CEE1E34A1EA00475C37 /* DDLocation.m in Sources */,
+				3AAD7CF81E35ABBF00475C37 /* DDSearchManager.swift in Sources */,
+				3AAD7CF61E35ABA400475C37 /* DDDriverManager.swift in Sources */,
+				3AAD7CEF1E34A1EA00475C37 /* DDLocationControl.m in Sources */,
+				3AAD7CF01E34A1EA00475C37 /* DDLocationView.m in Sources */,
+				3AAD7CF11E34A1EA00475C37 /* DDTaxiCallRequest.m in Sources */,
+				3AAD7CF21E34A1EA00475C37 /* CustomMovingAnnotation.m in Sources */,
+				3AAD7CF31E34A1EA00475C37 /* MANaviRoute.m in Sources */,
+				3AAD7CF41E34A1EA00475C37 /* Toast+UIView.m in Sources */,
+				3AAD7CDE1E349ED000475C37 /* ViewController.swift in Sources */,
+				3AAD7CFA1E35ABCE00475C37 /* DDSearchViewController.swift in Sources */,
+				3AAD7CDC1E349ED000475C37 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6AF14B1D1E2DD093006075DF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -443,6 +624,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		3AAD7CDF1E349ED000475C37 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3AAD7CE01E349ED000475C37 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3AAD7CE41E349ED000475C37 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3AAD7CE51E349ED000475C37 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		B6152C131DBDDF6E00254FC8 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -454,6 +651,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3AAD7CE81E349ED000475C37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 666514A177394BA605A9F484 /* Pods-iOS_trip-swift.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = YMJ372W38W;
+				INFOPLIST_FILE = "iOS_trip-swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.autonavi.TripDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "9b821a78-8ad6-4cf7-b6b0-31b43df04bbe";
+				PROVISIONING_PROFILE_SPECIFIER = openPlatform_development;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "iOS_trip-swift/Swift-Bridge-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		3AAD7CE91E349ED000475C37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E7688BD3A40E5E46CF42043 /* Pods-iOS_trip-swift.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = YMJ372W38W;
+				INFOPLIST_FILE = "iOS_trip-swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.autonavi.TripDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a892512d-fe94-4702-b716-0b66880b936d";
+				PROVISIONING_PROFILE_SPECIFIER = openPlatformInhouse;
+				SWIFT_OBJC_BRIDGING_HEADER = "iOS_trip-swift/Swift-Bridge-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		6AF14B281E2DD093006075DF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -618,6 +855,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3AAD7CEA1E349ED000475C37 /* Build configuration list for PBXNativeTarget "iOS_trip-swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AAD7CE81E349ED000475C37 /* Debug */,
+				3AAD7CE91E349ED000475C37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		6AF14B2A1E2DD093006075DF /* Build configuration list for PBXNativeTarget "iOS_tripUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -625,6 +871,7 @@
 				6AF14B291E2DD093006075DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B6152BF01DBDDE3B00254FC8 /* Build configuration list for PBXProject "iOS_trip" */ = {
 			isa = XCConfigurationList;

@@ -9,3 +9,10 @@ target 'iOS_trip' do
 
 
 end
+
+target 'iOS_trip-swift' do
+    
+    pod 'AMap3DMap'
+    pod 'AMapSearch'
+
+end

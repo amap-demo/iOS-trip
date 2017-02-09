@@ -55,3 +55,30 @@ iOS-trip
     }
 }
 ```
+
+`Swift`
+```
+/**
+*  司机相关管理类。获取司机数据、发送用车请求等。
+*/
+class DDDriverManager {
+	var delegate: DDDriverManagerDelegate?
+
+	func searchDriversWithinMapRect(mapRect: MAMapRect) { ...... }
+
+	func callTaxiWithRequest(request: DDTaxiCallRequest) -> Bool { ...... }
+}
+
+///有位置更新时，更新汽车图标位置，使之平滑移动。
+func onUpdatingLocations(_ locations: Array<CLLocation>, forDriver deiver: DDDriver) {
+    if locations.count > 0 {
+        var locs = Array<CLLocationCoordinate2D>()
+        for obj in locations {
+            locs.append(obj.coordinate)
+        }
+        
+        selectedDriver.addMoveAnimation(withKeyCoordinates: &locs, count: UInt(locations.count), withDuration: 5.0, withName: nil, completeCallback: nil)
+    }
+}
+```
+

@@ -61,6 +61,13 @@
         CLLocation * loc = [[CLLocation alloc] initWithCoordinate:coordinates[i] altitude:0.0 horizontalAccuracy:0.0 verticalAccuracy:0.0 timestamp:[NSDate date]];
         [path addObject:loc];
     }
+    
+    if (coordinates)
+    {
+        free(coordinates);
+        coordinates = NULL;
+    }
+    
     return path;
 }
 
