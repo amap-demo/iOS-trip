@@ -39,7 +39,7 @@
     
     [app.images[@"icon_passenger"] tap];
     
-    XCUIElementQuery *annos = [[[[[[[[[app.otherElements containingType:XCUIElementTypeNavigationBar identifier:@"德德用车"] childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther] elementBoundByIndex:0] childrenMatchingType:XCUIElementTypeOther] elementBoundByIndex:1] childrenMatchingType:XCUIElementTypeOther];
+    XCUIElementQuery *annos = [[app.otherElements[@"maannotationcontainer"] childrenMatchingType:XCUIElementTypeOther] matchingIdentifier:@"maannotationview"];
     
     XCTAssert(annos.count > 10, @"annos count must greater than 10");
     
