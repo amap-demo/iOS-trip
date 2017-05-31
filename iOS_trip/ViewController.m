@@ -338,7 +338,8 @@ typedef NS_ENUM(NSUInteger, DDState) {
 #define latitudinalRangeMeters 1000.0
 #define longitudinalRangeMeters 1000.0
     
-    MAMapRect rect = MAMapRectForCoordinateRegion(MACoordinateRegionMakeWithDistance(_mapView.userLocation.coordinate, latitudinalRangeMeters, longitudinalRangeMeters));
+    MAMapRect rect = MAMapRectForCoordinateRegion(MACoordinateRegionMakeWithDistance(_mapView.userLocation.location
+.coordinate, latitudinalRangeMeters, longitudinalRangeMeters));
     if(rect.size.width > 0 && rect.size.height > 0) {
         [_driverManager searchDriversWithinMapRect:rect];
     }
